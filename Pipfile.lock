@@ -84,10 +84,10 @@
         },
         "faker": {
             "hashes": [
-                "sha256:5ca203eb9adaf6a9d1517a4d4a35a4d587f373639ed31da82b0f2e31abc2397a",
-                "sha256:934660336924f4453733baebc74ad9c9b237155a17781990808c00801e63d557"
+                "sha256:31a58ec5a8f4672f24da3b5ddea02c82a712de1de3179b432948e5c34d787aca",
+                "sha256:aadfe0efe11ecbbbc5b3b0b0fab050c2acbd2d8e5201769546d43d236bfff663"
             ],
-            "version": "==4.9.0"
+            "version": "==6.4.1"
         },
         "mypy-extensions": {
             "hashes": [

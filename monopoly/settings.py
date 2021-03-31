@@ -10,22 +10,31 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import os
+from pathlib import Path
+import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False),
+    ALLOWED_HOSTS=(list, ["127.0.0.1", "localhost"]),
+)
+environ.Env.read_env(env_file=str(BASE_DIR / ".env"))
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "nd(fywbibl&zrk(&ep(jah7%+_kvy_=y4(6bg79^ktv3-2#!pw"
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env("ALLOWED_HOSTS")
 
 
 # Application definition
@@ -39,6 +48,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "functional_tests",
     "game",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -75,12 +85,7 @@ WSGI_APPLICATION = "monopoly.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
-}
+DATABASES = {"default": env.db()}
 
 
 # Password validation
@@ -105,9 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "nl"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Amsterdam"
 
 USE_I18N = True
 

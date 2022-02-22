@@ -97,11 +97,10 @@
         },
         "faker": {
             "hashes": [
-                "sha256:60a7263104ef7a14ecfe2af1142d53924aa534ccec85cea82bb67b2b32f84421",
-                "sha256:f43ac743c34affb1c7fccca8b06450371cd482b6ddcb4110e420acb24356e70b"
+                "sha256:1c28d95ab7d0f618a03b84608e399389eb3baac52393be46f65d018044d2ff76",
+                "sha256:d7262212fc00de89c481d26db10cbd137a71d771e56ad1b5b9192eb2710bb06a"
             ],
-            "markers": "python_version >= '3.6'",
-            "version": "==6.6.2"
+            "version": "==13.1.0"
         },
         "mypy-extensions": {
             "hashes": [

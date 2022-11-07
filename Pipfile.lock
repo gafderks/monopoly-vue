@@ -96,12 +96,8 @@
             "version": "==3.2.0"
         },
         "faker": {
-            "hashes": [
-                "sha256:60a7263104ef7a14ecfe2af1142d53924aa534ccec85cea82bb67b2b32f84421",
-                "sha256:f43ac743c34affb1c7fccca8b06450371cd482b6ddcb4110e420acb24356e70b"
-            ],
-            "markers": "python_version >= '3.6'",
-            "version": "==6.6.2"
+            "hashes": [],
+            "version": "==15.3.1"
         },
         "mypy-extensions": {
             "hashes": [
